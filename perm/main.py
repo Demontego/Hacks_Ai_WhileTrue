@@ -301,15 +301,19 @@ def all_check_fond(fond, inn):
         
     
     if news_yandex is not  None:
-        negs_ya, pos_ya = predict(news_yandex)
-       
+        if len(news_yandex)>0: 
+            negs_ya, pos_ya = predict(news_yandex)
+        else:
+            negs_ya, pos_ya = None, None
     else:
         negs_ya, pos_ya = None, None
         
     if reviews is not None:
         mark = reviews['mark']
+        rev_neg, rev_pos = predict(reveiws['reviews'])
     else:    
         mark = None
+        rev_neg, rev_pos = None, None
    #titles_google,news_google
     tags = ['tags']
     count_pos_tags=0
@@ -326,7 +330,8 @@ def all_check_fond(fond, inn):
     final_result["pos_go"] = pos_go
     final_result["title_neg_go"] = title_neg_go
     final_result["title_pos_go"] = title_pos_go
-    
+    final_result["rev_pos"] = rev_pos
+    final_result["rev_neg"] = rev_neg
    
     final_result["result_minust"] = result_minust
     final_result["result_mail"] = result_mail
