@@ -264,7 +264,7 @@ def exec_crawler(a):
         res = func(fond,inn)
     except Exception as e:
         res = None
-        print(repr(e))
+        print(func.__name__, repr(e))
     return res
 
 def all_check_fond(fond, inn):
