@@ -310,7 +310,7 @@ def all_check_fond(fond, inn):
         
     if reviews is not None:
         mark = reviews['mark']
-        rev_neg, rev_pos = predict(reveiws['reviews'])
+        rev_neg, rev_pos = predict(reviews['reviews'])
     else:    
         mark = None
         rev_neg, rev_pos = None, None
