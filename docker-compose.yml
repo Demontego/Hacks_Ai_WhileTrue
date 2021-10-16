@@ -2,9 +2,6 @@ services:
   perm:
     build: perm
     container_name: "perm"
-    volumes:
-      - ./perm_app:/code
-      - ./cacert.pem:/opt/bitnami/python/lib/python3.7/site-packages/certifi/cacert.pem:ro
     ports:
       - "0.0.0.0:8000:5000"
     networks:
@@ -20,8 +17,6 @@ services:
           ipv4_address: 173.17.206.247
       internet:
           ipv4_address: 173.17.205.247
-                 
-  
 #    user: "1000:1000"
 
 
